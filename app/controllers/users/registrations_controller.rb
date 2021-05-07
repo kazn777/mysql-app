@@ -65,7 +65,9 @@ end
   def complete
   end
 
-  protected
+
+
+  # protected
 
   # アカウント登録後
   def after_sign_up_path_for(resource)
@@ -75,11 +77,11 @@ end
   # GET /resource/edit
   # def edit
   #   super
-  # end
+  #   end
 
   # PUT /resource
   # def update
-  #   super
+    # super
   # end
 
   # DELETE /resource
@@ -125,11 +127,32 @@ end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:password,:sex])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce, :birthday, :prefecture_id, :city, :hobby, :LikeType])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce, :birthday, :prefecture_id, :city, :hobby, :LikeType, :age])
   end 
 
   def after_update_path_for(resource)
-    users_mypage_path(resource)
+    birthday = @user.birthday
+    @user.age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
+
+    if @user.save
+      flash[:notice] = "ユーザー情報を編集しました"
+       users_mypage_path(resource)
+    end
   end
+  #  users_mypage_path(resource)
+  #  birthday = @user.birthday
+  #  @user.age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
+
+
+  # def update
+  #   birthday = @user.birthday
+  #   @user.age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
+
+  #   if @user.save
+  #     flash[:notice] = "ユーザー情報を編集しました"
+  #     redirect_to("/users/mypage")
+  #   end
+  # end
+
 
 end

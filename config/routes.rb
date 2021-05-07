@@ -38,9 +38,9 @@ Rails.application.routes.draw do
     get "users/index" => "users#index", as: :list
     get "users/mypage" => "users#mypage"
     get "users/:id" => "users#show"
-    get 'users/:id/edit' => "users#myedit"
+    # get 'users/:id/edit' => "users#myedit"
     # post 'users/:id/update' => 'users#update'  
-    patch 'users/:id/update' => 'users#update'  
+    patch 'users/:id/update' => 'users/registrations#update'  
     get "login", :to => "users/sessions#new"
     post 'login' => 'users/sessions#create'
     get "sign_out", :to => "users/sessions#destroy" 

@@ -66,6 +66,8 @@ end
   #   end
   # end
 
+
+  
   def mypage
     @user = User.find_by(id: session[:user_id])
     birthday = @user.birthday
@@ -74,12 +76,24 @@ end
   end
 
 
-  def myedit
-    @user = User.find_by(id: params[:id])
-    # @user = current_user
-  end
+  # def myedit
+  #   @user = User.find_by(id: params[:id])
+  #   birthday = @user.birthday
+  #   @age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
 
-  # def update
+    # @user = current_user
+  # end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    birthday = @user.birthday
+    @user.age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
+
+    if @user.save
+      flash[:notice] = "ユーザー情報を編集しました"
+      　redirect_to("/users/show")
+    end
+  end
   #   @user = User.find_by(params[:id])
   #   # @user = current_user
   #   # @user.name = "ka1112221"
