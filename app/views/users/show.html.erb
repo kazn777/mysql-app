@@ -5,6 +5,10 @@
 <p>メールアドレス : <%= @user.email %></p>
 <p>性別 : <%= @user.sex_text %></p>
 <p>年齢 : <%= @age %></p>
+<p>都道府県 :<%= @user.prefecture.name %></p>
+<p>市町村 :<%= @user.city %></p>
+<p>趣味 :<%= @user.hobby %></p>
+<p>好きなタイプ :<%= @user.LikeType %></p>
 <p>自己紹介</p>
 <p><%= @user.introduce %></p>
 </br>

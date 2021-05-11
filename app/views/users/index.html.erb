@@ -1,10 +1,5 @@
 <div class = "index-list">
     <h1>ユーザー一覧</h1>
-    <%= search_form_for @q do |f| %>
-
-
-    <%= f.submit "検索" %>
-    <% end %>
     <% @users.each do |user| %>
       <div class="users-index-item">
         <div class="user-right">
@@ -12,5 +7,6 @@
         </div>
       </div>
     <% end %>
+
   </div>
 </div>

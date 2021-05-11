@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
     # get "users/:id" => "users/registrations#detail"
     get "users/index" => "users#index", as: :list
+    get "users/search" => "users#search", as: :search
     get "users/mypage" => "users#mypage"
     get "users/:id" => "users#show"
     # get 'users/:id/edit' => "users#myedit"
