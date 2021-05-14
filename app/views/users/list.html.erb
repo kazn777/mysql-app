@@ -1,10 +1,9 @@
 <div class = "index-list">
-    <h1>検索結果</h1>
+    <h1>ユーザー一覧</h1>
     <% @users.each do |user| %>
       <div class="users-index-item">
         <div class="user-right">
           <%= link_to(user.name, "/users/#{user.id}") %>
-          <%= link_to(user.age, "/users/#{user.id}") %>歳
         </div>
       </div>
     <% end %>

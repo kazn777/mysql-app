@@ -21,6 +21,9 @@ class UsersController < ApplicationController
 
   end
 
+  def list
+    @users = User.all
+  end
 
   def show
     @user = User.find(params[:id])
@@ -80,7 +83,7 @@ end
   def mypage
     @user = User.find_by(id: session[:user_id])
     birthday = @user.birthday
-    @age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
+    #@age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
 
   end
 

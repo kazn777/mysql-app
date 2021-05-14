@@ -13,6 +13,9 @@
     <p><%= f.label :password, "パスワード" %><br />
     <%= f.password_field :password, value: @user.password, readonly: true %></p><br />
 
+    <p><%= f.label :prefecture_id, "都道府県" %>
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, :selected =>  @user.prefecture_id, disabled: true %></p><br />
+
     <p><%= f.label :sex, "性別" %>
     <%= f.radio_button :sex,  @user.sex %>
     <%= @user.sex_text %></p><br />

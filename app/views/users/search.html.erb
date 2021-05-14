@@ -3,13 +3,13 @@
     <%= search_form_for @q do |f| %>
   <%= f.label :age %>
   <%= f.number_field :age_gteq %>以上〜
-  <%= f.number_field :age_lt %>未満
+  <%= f.number_field :age_lt %>未満<br />
+
+  <%= f.label :prefecture_id, "都道府県" %>
+  <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
+
 
     <%= f.submit "検索" %>
     <% end %>
-
-<% if params[:q].present? && params[:q][:name_cont].present? %>
-  Search name: <%= params[:q][:name_cont] %>
-<% end %>
   </div>
 </div>

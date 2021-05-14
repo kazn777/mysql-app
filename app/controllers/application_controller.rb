@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       # devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
       # devise_parameter_sanitizer.permit(:sign_up, keys:[:email, :name, :password, ])
       devise_parameter_sanitizer.permit(:account_update, keys: [:introduce, :prefecture_id, :city, :hobby, :LikeType, :age]) 
-      devise_parameter_sanitizer.permit(:sign_up, keys:[:email, :name, :password, :sex])
+      devise_parameter_sanitizer.permit(:sign_up, keys:[:email, :name, :password, :prefecture_id, :sex])
   end
 
   def after_sign_in_path_for(resource)

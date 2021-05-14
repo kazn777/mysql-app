@@ -126,7 +126,7 @@ end
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:password,:sex])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:password, :prefecture_id, :sex])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce, :birthday, :prefecture_id, :city, :hobby, :LikeType, :age])
   end 
 
