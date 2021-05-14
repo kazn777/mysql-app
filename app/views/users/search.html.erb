@@ -6,7 +6,7 @@
   <%= f.number_field :age_lt %>未満<br />
 
   <%= f.label :prefecture_id, "都道府県" %>
-  <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
+  <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
 
 
     <%= f.submit "検索" %>

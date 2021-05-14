@@ -15,9 +15,10 @@ class UsersController < ApplicationController
   end
 
   def search
+    # @search_word = params[:q][:age_or_prefecture_id_cont] if params[:q]
     @q = User.ransack(params[:q])
-    @users = @q.result.includes(:age)
-    # @users = @q.result(distinct: true)
+    # @users = @q.result.includes(:age)
+    @users = @q.result(distinct: true)
 
   end
 
@@ -83,7 +84,7 @@ end
   def mypage
     @user = User.find_by(id: session[:user_id])
     birthday = @user.birthday
-    #@age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
+    @age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
 
   end
 

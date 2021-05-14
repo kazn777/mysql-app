@@ -23,7 +23,12 @@
     <%# <% end %>
             <%= f.password_field :password %>  
       </div>
-
+    <%= f.label "生年月日" %><br />
+    <%= f.date_select :birthday, use_month_numbers: true,
+    start_year: 1930,
+    end_year: (Time.now.year - 10),
+    default: Date.new(1989, 1, 1) %><br />
+    
       <div class="field">
     <%= f.label :prefecture_id, "都道府県" %>
     <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
