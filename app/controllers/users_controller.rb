@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def search
     # @search_word = params[:q][:age_or_prefecture_id_cont] if params[:q]
-    @q = User.ransack(params[:q])
+    @q = User.ransack(params[:q], sex_not_eq: User.sex)
     # @users = @q.result.includes(:age)
     @users = @q.result(distinct: true)
 

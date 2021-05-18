@@ -8,6 +8,7 @@
   <%= f.label :prefecture_id, "都道府県" %>
   <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, include_blank: '選択して下さい' %>
 
+  <%= f.radio_button :sex_not_eq, selected: current_user.sex  %>
 
     <%= f.submit "検索" %>
     <% end %>
