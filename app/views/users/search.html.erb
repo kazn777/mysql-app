@@ -10,9 +10,9 @@
 
   <%= f.label :sex, "性別" %> 
   <span>男性</span>
-  <%= radio_button_tag :sex_eq, 0, checked?(@user.sex)  %>
+  <%= f.radio_button :sex_eq , 0 , :checked => !!(@user.sex != 0) %>
   <span>女性</span>
-  <%= radio_button_tag :sex_eq, 1, checked?(@user.sex)   %>
+  <%= f.radio_button :sex_eq , 1 , :checked => !!(@user.sex != 1) %>
 
     <%= f.submit "検索" %>
     <% end %>
