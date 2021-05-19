@@ -30,11 +30,17 @@
   </li>
 <% end %>
 
-いいね件数: <%= @user.likes.count %>
-<% if current_user.already_liked?(@user) %>
-  <%= button_to 'いいねを取り消す', link_to("/likes/#{@user.id}/create"), method: :delete %>
-<% else %>
-  <%= button_to 'いいね', link_to("/likes/#{@user.id}/create") %>
+<% unless @user.id == current_user.id %>
+  <% if @isRoom == true %>
+    <%= link_to "チャットへGo!", chat_path %>
+  <% else %>
+    <%= form_for @room do |f| %>
+      <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, :value=> @user.id %>
+      <% end %>
+      <%= f.submit "チャットを始める" %>
+    <% end %>
+  <% end %>
 <% end %>
 
 </div>

@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @like = Like.new
     birthday = @user.birthday
     @age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
 

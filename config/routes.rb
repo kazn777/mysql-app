@@ -57,7 +57,7 @@ Rails.application.routes.draw do
     resources :users
     # resources :rooms
     resources :chats
-
+    resources :likes, only: [:create, :destroy]
     # resource :users, only: [:show,:edit,:update]
     # resource :messages, only: [:create]
     # resource :rooms, only: [:create,:show]
