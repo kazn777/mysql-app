@@ -54,10 +54,11 @@ Rails.application.routes.draw do
 
     get "rooms/:id" => "rooms#show"
 
-    resources :users
+    resources :users do
+      resources :likes, only: [:create, :destroy]
+    end
     # resources :rooms
     resources :chats
-    resources :likes, only: [:create, :destroy]
     # resource :users, only: [:show,:edit,:update]
     # resource :messages, only: [:create]
     # resource :rooms, only: [:create,:show]
