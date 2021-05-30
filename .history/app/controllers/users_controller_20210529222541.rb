@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     birthday = @user.birthday
     @age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
     @like = Like.new
-    @likes_count = Like.where(liked_user_id: @user.id).count
+    @likes_count = Like.where(post_id: @post.id).count
     #チャット
     if user_signed_in?
         #Entry内のuser_idがcurrent_userと同じEntry
