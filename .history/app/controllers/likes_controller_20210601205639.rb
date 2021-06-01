@@ -1,8 +1,7 @@
 class LikesController < ApplicationController
     def create #いいねボタン押下後のcreateアクション
         @like = current_user.likes.create(liked_user_id: params[:user_id])
-        #params フォーム等で送られたパラメータ情報を取得するメソッド
-        #current_user サインインしてる
+        #params フォーム等で送られたパラメータ情報を取得する
         redirect_back(fallback_location: root_path)
       end
     
