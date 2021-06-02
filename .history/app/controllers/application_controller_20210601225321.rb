@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-      # configure_permitted_parameters:指定のメソッドで指定のパラメーターを取得する
+    
       # サインアップ時にnameのストロングパラメータを追加
       # devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
       # devise_parameter_sanitizer.permit(:sign_up, keys:[:email, :name, :password, ])

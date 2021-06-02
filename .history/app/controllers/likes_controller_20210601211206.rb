@@ -11,6 +11,6 @@ class LikesController < ApplicationController
         @like = Like.find_by(liked_user_id: params[:user_id], user_id: current_user.id)
         @like.destroy
         redirect_back(fallback_location: root_path)
-        #find_by:カラムを使ってレコードを検索し、最初に一致したものを返す
+        #find_byは、あるカラムを使ってレコードを検索し、最初に一致したものを返します。
       end
 end

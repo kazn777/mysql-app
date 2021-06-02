@@ -1,0 +1,3 @@
+params: フォーム等で送られたパラメータ情報を取得するメソッド
+current_user： サインインしてるユーザー
+#fallback_location 指定の場所にリダイレクトさせる

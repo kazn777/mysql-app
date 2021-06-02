@@ -12,4 +12,4 @@ before_action:コントローラーが実行される前に処理を行う事
 session:ログイン中ユーザーに対する指定
 ストロングパラメーター：受け継いだパラメーターが安全なデータか検証した上で受け継ぐ仕組み
 configure_permitted_parameters:指定のメソッドで指定のパラメーターを取得する
-User.new：新しいUserを作成する
+User.new：新しいUser

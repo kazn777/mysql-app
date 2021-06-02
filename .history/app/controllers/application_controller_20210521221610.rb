@@ -1,10 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   protect_from_forgery with: :null_session
-  # protect_from_forgery:CSRF対策の設定
   # ログイン済ユーザーのみにアクセスを許可する
   # before_action :authenticate_user!
-  #before_action:コントローラーが実行される前に処理を行う事
   before_action:set_current_user
 
     # deviseコントローラーにストロングパラメータを追加する          
@@ -12,7 +10,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-      # configure_permitted_parameters:指定のメソッドで指定のパラメーターを取得する
       # サインアップ時にnameのストロングパラメータを追加
       # devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
       # devise_parameter_sanitizer.permit(:sign_up, keys:[:email, :name, :password, ])
@@ -23,7 +20,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     # @current_user = User.find_by(id: session[:user_id])
     session[:user_id] = @user.id
-    #session:ログイン中ユーザーに対する指定
     # root_path(resource)
     root_path
     # "/user/#{current_user.id}"

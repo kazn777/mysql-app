@@ -1,15 +1,10 @@
 params:フォーム等で送られたパラメータ情報を取得するメソッド
 current_user：サインインしてるユーザー
 fallback_location：指定の場所にリダイレクトさせる
-find：主キーに対応するレコードを取り出すことができる
+find：
 find_by:カラムを使ってレコードを検索し、最初に一致したものだけを返す
 @[名前]:インスタンス変数と呼び、特定のオブジェクトに属する変数
 whereメソッド：テーブル内の条件に一致したレコードを配列の形で取得することができるメソッド
 protect_from_forgery:CSRF対策の設定
 CSRF:サイバー攻撃の1種。
 　　　正式名所->クロスサイトリクエストフォージェリ（Cross Site Request Forgeries）
-before_action:コントローラーが実行される前に処理を行う事
-session:ログイン中ユーザーに対する指定
-ストロングパラメーター：受け継いだパラメーターが安全なデータか検証した上で受け継ぐ仕組み
-configure_permitted_parameters:指定のメソッドで指定のパラメーターを取得する
-User.new：新しいUserを作成する

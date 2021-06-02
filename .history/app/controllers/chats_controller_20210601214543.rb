@@ -2,7 +2,7 @@ class ChatsController < ApplicationController
   def index
     @my_chats=current_user.chats
     @chat_partners=User.where.not(id:current_user.id)#自分以外
-    #whereメソッド：テーブル内の条件に一致したレコードを配列の形で取得することができるメソッド
+    #whereメソッドテーブル内の条件に一致したレコードを配列の形で取得することができるメソッド
   end
 
   def show

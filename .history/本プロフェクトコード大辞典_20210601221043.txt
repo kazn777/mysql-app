@@ -1,0 +1,8 @@
+params:フォーム等で送られたパラメータ情報を取得するメソッド
+current_user：サインインしてるユーザー
+fallback_location：指定の場所にリダイレクトさせる
+find_by:カラムを使ってレコードを検索し、最初に一致したものを返す
+@[名前]:インスタンス変数と呼び、特定のオブジェクトに属する変数
+whereメソッド：テーブル内の条件に一致したレコードを配列の形で取得することができるメソッド
+protect_from_forgery:CSRF対策の設定
+CSRF:クロスサイトリクエストフォージェリ（Cross Site Request Forgeries）
