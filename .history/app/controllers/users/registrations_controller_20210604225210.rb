@@ -127,7 +127,7 @@ end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:password, :birthday, :prefecture_id, :sex])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce, :birthday, :prefecture_id, :city, :hobby, :LikeType, :age, :image])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce, :birthday, :prefecture_id, :city, :hobby, :LikeType, :age, , :image])
   end 
 
   def after_update_path_for(resource)

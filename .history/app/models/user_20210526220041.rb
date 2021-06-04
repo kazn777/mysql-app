@@ -38,8 +38,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
 
-  mount_uploader :image, ImageUploader
-
   def already_liked?(user)
     self.likes.exists?(liked_user_id: user.id)
   end

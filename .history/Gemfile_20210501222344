@@ -71,8 +71,6 @@ gem 'active_hash'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'seed-fu'
 gem 'active_hash'
-gem 'carrierwave'
-gem 'rmagick'
 
 source "https://rubygems.org"
 

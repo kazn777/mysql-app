@@ -148,7 +148,7 @@ end
 
   private
   def user_params
-    params.require(:user).permit(:name, :prefecture_id, :image)
+    params.require(:user).permit(:name, :prefecture_id, )
   end
   # def set_user
   #   @user = User.find_by(id: params[:id])

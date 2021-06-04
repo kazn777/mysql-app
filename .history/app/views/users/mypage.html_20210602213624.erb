@@ -1,8 +1,6 @@
 <div class = "profile">
 <h1>プロフィール</h1>
-<% if @user.image? %>                                                              
-  <%= image_tag @user.image.url %>
-<% end %>
+<p> : <%= current_user.name %></p>
 <p>名前 : <%= current_user.name %></p>
 <p>メールアドレス : <%= current_user.email %></p>
 <p>性別 : <%= current_user.sex_text %></p>
