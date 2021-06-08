@@ -37,7 +37,7 @@ class User < ApplicationRecord
   has_many :topics, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
-  #has_many:テーブル同士を関連付け
+  
 
   mount_uploader :image, ImageUploader
 

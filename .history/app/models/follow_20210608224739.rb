@@ -9,7 +9,7 @@ class Follow < ActiveRecord::Base
 
   def block!
     self.update_attribute(:blocked, true)
-    #selfメソッド:オブジェクトそのもの
+    #selfメソッド:
   end
 
 end
