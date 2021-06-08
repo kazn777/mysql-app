@@ -73,7 +73,6 @@ end
   # アカウント登録後
   def after_sign_up_path_for(resource)
     users_sign_up_complete_path(resource)
-    #resource:ログインユーザー向けの複数ルーティング定義
   end
 
   # GET /resource/edit
@@ -135,7 +134,7 @@ end
   def after_update_path_for(resource)
     birthday = @user.birthday
     @user.age = (Date.today.strftime("%Y%m%d").to_i - birthday.strftime("%Y%m%d").to_i) / 10000
-    #to_iメソッド:数字の文字列を数値オブジェクトに変換するメソッド,小数を整数に変換することも可
+    #to_iメソッド:数字の文字列を数値オブジェクトに変換するメソッド,小数を整数に変換すること
     #strtime:日時データを指定したフォーマットで文字列に変換することができるメソッド
     if @user.save
       flash[:notice] = "ユーザー情報を編集しました"

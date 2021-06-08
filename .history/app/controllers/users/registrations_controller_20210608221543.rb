@@ -73,7 +73,7 @@ end
   # アカウント登録後
   def after_sign_up_path_for(resource)
     users_sign_up_complete_path(resource)
-    #resource:ログインユーザー向けの複数ルーティング定義
+    #resource:
   end
 
   # GET /resource/edit

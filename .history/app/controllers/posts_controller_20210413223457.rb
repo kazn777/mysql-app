@@ -27,6 +27,5 @@ class PostsController < ApplicationController
     private
     def post_params
      params.require(:post).permit(:body)
-     #require/permit必要なパラメータだけに絞り込むメソッド
     end
 end
