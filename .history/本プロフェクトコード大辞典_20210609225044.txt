@@ -62,5 +62,3 @@ content_tag：タグを動的に生成。HTMLとERBが混ざってしまう場�
 stylesheet_link_tag：外部スタイルシートを指定するリンクタグを生成
 
 yield：コントローラで処理された内容を埋め込む先を指定
-
-truncate：文字列を切り捨てる

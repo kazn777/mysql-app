@@ -63,4 +63,4 @@ stylesheet_link_tag：外部スタイルシートを指定するリンクタグ�
 
 yield：コントローラで処理された内容を埋め込む先を指定
 
-truncate：文字列を切り捨てる
+ truncate：

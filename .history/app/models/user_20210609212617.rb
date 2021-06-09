@@ -9,7 +9,7 @@ class User < ApplicationRecord
   # validates :name, presence: true
   validates :email, :name, :sex, presence: true
   validates :password, presence: true, length: { minimum: 6},on: :create
-  #presenceメソッド：オブジェクトが存在すればそのオブジェクトを返し、オブジェクトが存在しなければnilを返すメソッド
+  
   validates :introduce, length: { maximum: 255 }
   
   extend Enumerize
