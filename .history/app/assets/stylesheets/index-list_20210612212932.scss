@@ -1,17 +1,17 @@
-.follower{
+.index-list{
+    // text-align: center;
+    // display: flex; 
+    // flex-direction: column; 
+    // align-items: center; 
+    // justify-content: center;
     text-align: center;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     justify-content: center;
+    height: 500vh;
     position: relative; /* 今の位置を基準 */
     top: 50px;
-    // height: 100vh;
     // width: 100vw;
 
 }
-
-.follower_name{
-    font-size: 150%;
-}
-

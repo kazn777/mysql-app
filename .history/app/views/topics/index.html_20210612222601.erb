@@ -1,10 +1,10 @@
 <div class = "topics">
   <h1>トピック新規登録</h1>
 <%= form_for @newTopic, :url => {:action => 'create'} do |f| %>
-  <%= f.text_field :title, :placeholder => "トピック名を入力してください" %>
+  <%= f.text_field :title %>
   <%= f.hidden_field :user_id %>
   <%= f.submit %>
-<% end %><br />
+<% end %><>
 <h1>トピック一覧</h1>
 <ul>
   <% @topics.each do |topic| %>

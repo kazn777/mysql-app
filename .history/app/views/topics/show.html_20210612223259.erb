@@ -9,26 +9,22 @@
         <%= f.text_area :body %>
         <%= f.hidden_field :topic_id %>
     </div>
-    <div><%= f.submit "投稿する" %></div><br />
+    <div><%= f.submit "投稿する" %></div>
 <% end %>
 
 
 <table>
     <thead>
         <tr>
-            <th>投稿時間</th>
             <th>投稿者名</th>
             <th>本文</th>
-
         </tr>
     </thead>
     <tbody>
         <% @posts.each do |post| %>
             <tr>
-                <td><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
                 <td><%= post.user.name %></td>
                 <td><%= post.body %></td>
-
             </tr>
         <% end %>
     </tbody>

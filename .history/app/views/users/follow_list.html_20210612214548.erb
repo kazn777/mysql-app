@@ -1,7 +1,7 @@
 <div class = "follower">
 <h1>フォロー</h1></br>
+<div class="action">
 <% @user.all_following.each do |user| %>
- <%= link_to(user.name, "/users/#{user.id}", {class: "follower_name"}) %>
+ <%= link_to(user.name, "/users/#{user.id}") %>
 <% end %>
-</div>
 </div>

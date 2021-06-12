@@ -1,7 +1,7 @@
 <div class = "index-list">
-    <h1>ユーザー検索</h1><br />
+    <h1>ユーザー検索</h1>
     <%= search_form_for @q do |f| %>
-  <%= f.label :age , "年齢" %>
+  <%= f.label :age %>
   <%= f.number_field :age_gteq %>以上〜
   <%= f.number_field :age_lt %>未満<br /><br />
 
@@ -12,7 +12,7 @@
   <span>男性</span>
   <%= f.radio_button :sex_eq , 0 , :checked => !!(@user.sex != 0) %>
   <span>女性</span>
-  <%= f.radio_button :sex_eq , 1 , :checked => !!(@user.sex != 1) %><br /><br />
+  <%= f.radio_button :sex_eq , 1 , :checked => !!(@user.sex != 1) %><br />
 
     <%= f.submit "検索" %>
     <% end %>
