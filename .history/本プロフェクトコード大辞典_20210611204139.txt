@@ -65,8 +65,4 @@ yield：コントローラで処理された内容を埋め込む先を指定
 
 truncate：文字列を切り捨てる
 
-unless:もし評価が偽(false)であればコードを実行する
-
-fields_for：form_for内で異なるモデルを編集できるようになる
-
-safe_join：Array＃joinが返すものと同様のHTMLセーフ文字列を返す
+unless:もし評価が偽(false)であれば

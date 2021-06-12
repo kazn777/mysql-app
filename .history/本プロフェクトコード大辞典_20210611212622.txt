@@ -69,4 +69,4 @@ unless:もし評価が偽(false)であればコードを実行する
 
 fields_for：form_for内で異なるモデルを編集できるようになる
 
-safe_join：Array＃joinが返すものと同様のHTMLセーフ文字列を返す
+safe_join
