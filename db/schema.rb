@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_133955) do
+ActiveRecord::Schema.define(version: 2021_06_15_120812) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 2021_06_04_133955) do
     t.index ["users_id"], name: "index_chats_on_users_id"
   end
 
+  create_table "direct_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id"
+    t.integer "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
@@ -73,17 +81,6 @@ ActiveRecord::Schema.define(version: 2021_06_04_133955) do
     t.bigint "liked_user_id"
     t.index ["liked_user_id"], name: "index_likes_on_liked_user_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
-  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "room_id", null: false
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "partner_id"
-    t.index ["room_id"], name: "index_messages_on_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -144,7 +141,5 @@ ActiveRecord::Schema.define(version: 2021_06_04_133955) do
   add_foreign_key "entries", "rooms"
   add_foreign_key "entries", "users"
   add_foreign_key "likes", "users"
-  add_foreign_key "messages", "rooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"
 end

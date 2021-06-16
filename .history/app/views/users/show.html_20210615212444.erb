@@ -1,0 +1,41 @@
+<div class = "profile">
+<h1>プロフィール</h1>
+
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>性別 : <%= @user.sex_text %></p>
+<p>年齢 : <%= @age %></p>
+<p>都道府県 :<%= @user.prefecture.name %></p>
+<p>市町村 :<%= @user.city %></p>
+<p>趣味 :<%= @user.hobby %></p>
+<p>好きなタイプ :<%= @user.LikeType %></p>
+<p>自己紹介</p>
+<p><%= @user.introduce %></p>
+</br>
+<p><%= link_to "フォロー:#{@user.follow_count}",{controller: :users,action: :follow_list,user_id: @user.id}, method: :get %></p>
+<p><%= link_to "フォロワー:#{@user.followers_count}",{controller: :users,action: :follower_list,user_id: @user.id}, method: :get%></p></br>
+
+
+<% if @user.id != current_user.id %>
+  <li class="collection-item">
+    <% unless current_user.following?(@user) %>
+      <div class="action">
+        <%= link_to "フォローする", {controller: :users,action: :follow,user_id: @user.id}, method: :put ,class:"btn btn-red50_rsd" %>
+      </div>
+    <% else %>
+      <div class="action">
+         <%= link_to 'フォローを解除する' , {controller: :users,action: :unfollow,user_id: @user.id}, method: :put, class:"btn btn-red50_rsd"%>
+      </div>
+    <% end %>
+  </li>
+<% end %>
+
+いいね件数: <%= @likes_count %>
+<% if current_user.already_liked?(@user) %>
+  <%= button_to 'いいねを取り消す', user_like_path(@user), method: :delete %>
+<% else %>
+  <%= button_to 'いいね', user_likes_path(@user) %>
+<% end %>
+
+
+</div>
