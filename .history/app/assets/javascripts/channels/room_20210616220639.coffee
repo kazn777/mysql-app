@@ -9,7 +9,7 @@ document.addEventListener 'turbolinks:load', ->
       #値を受け取った時
       received: (data) ->
         #投稿を追加
-        $('#direct_messages').append data['direct_message']
+        $('#direct_messages').appenddata['direct_message']
       #サーバーサイドのspeakアクションにdirect_messageパラメータを渡す
       speak: (direct_message) ->
         @perform 'speak', direct_message: direct_message

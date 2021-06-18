@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  mount ActionCable.server => '/cable'
   get 'topics/index'
   get 'topics/show/:id' => 'topics#show', as: :topics_show
   post 'topics/create' => 'topics#create'
   post 'topics/destroy/:id' => 'topics#destroy', as: :topic_destroy
   post 'posts/create' => 'posts#create', as: :post_create
   # resources :posts, only: [:create, :show]
-  # get 'chats/index'
-  # get 'chats/show'
+  get 'chats/index'
+  get 'chats/show'
   # get 'rooms/show'
+  mount ActionCable.server => '/cable'
   # get 'chats/index'
   # get 'chats/show'
   get 'home/index'
@@ -58,9 +58,9 @@ Rails.application.routes.draw do
       resources :likes, only: [:create, :destroy]
     end
     resources :rooms
-    # resources :chats
+    resources :chats
       # Serve websocket cable requests in-process
-    
+  mount ActionCable.server => '/cable'
     # resource :users, only: [:show,:edit,:update]
     # resource :messages, only: [:create]
     # resource :rooms, only: [:create,:show]

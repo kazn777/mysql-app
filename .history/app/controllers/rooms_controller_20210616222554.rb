@@ -11,12 +11,8 @@ class RoomsController < ApplicationController
         @anotherEntries = Entry.where(room_id: myRoomIds).where.not(user_id: @user.id).order(created_at: :desc)
       end
 
-      def show
-        # メッセージ一覧を取得
-        @messages = Message.all
-      end
       
-
+      
       # def show
       #   @room = Room.find(params[:id])
       #   #ルームが作成されているかどうか
